@@ -13,9 +13,14 @@ def read_from_file(file_name):
 def display_lines(lines):
     """
     Функция №2: Выводит строки на экран.
-    Пока ничего не делает.
     """
-    pass
+    if not lines:
+        print("Нет строк для отображения.")
+        return
+
+    print("Содержимое файла:")
+    for line in lines:
+        print(line)
 
 def write_to_file(file_name, lines):
     """
