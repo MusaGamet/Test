@@ -1,9 +1,14 @@
 def read_from_file(file_name):
     """
     Функция №1: Читает строки из файла и возвращает их в виде списка.
-    Пока ничего не делает.
     """
-    pass
+    try:
+        with open(file_name, "r", encoding="utf-8") as file:
+            lines = file.readlines()
+        return [line.strip() for line in lines]
+    except FileNotFoundError:
+        print(f"Ошибка: Файл {file_name} не найден.")
+        return []
 
 def display_lines(lines):
     """
