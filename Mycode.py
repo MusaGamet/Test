@@ -25,9 +25,14 @@ def display_lines(lines):
 def write_to_file(file_name, lines):
     """
     Функция №3: Записывает строки в файл.
-    Пока ничего не делает.
     """
-    pass
+    try:
+        with open(file_name, "w", encoding="utf-8") as file:
+            for line in lines:
+                file.write(line + "\n")
+        print(f"Строки успешно записаны в файл {file_name}.")
+    except Exception as e:
+        print(f"Ошибка записи в файл: {e}")
 
 def main():
     # Пока просто вызов пустых функций
